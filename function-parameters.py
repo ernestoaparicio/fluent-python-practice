@@ -30,3 +30,36 @@ print(tag(content='testing', name="img"))
 my_tag = {'name': 'img', 'title': 'Sunset Boulevard',
           'src': 'sunset.jpg', 'class': 'framed'}
 print(tag(**my_tag))
+
+# keyword only params
+
+
+def f(**kwargs):
+    for kw in kwargs:
+        print(kw)
+
+
+f(a=1, b=2, c=3)
+
+
+def f(a, *, b):
+    return a, b
+
+
+print(f(1, b=2))
+
+
+def f(*, a, b):
+    return a, b
+
+
+print(f(a=3, b=4))
+
+# positional arguments only
+
+
+"""def f(a, b, /): # python 3.8 and above
+    return a, b
+
+
+print(f(3, 4))"""
